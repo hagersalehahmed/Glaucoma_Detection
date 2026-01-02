@@ -14,7 +14,7 @@ https://github.com/smilell/AG-CNN/tree/master?tab=readme-ov-file
 https://www.kaggle.com/datasets/gunavenkatdoddi/eye-diseases-classification
 
 #### Step 2: Data Augmentation and Preprocessing
-To improve model generalization and handle data imbalance, several augmentation and preprocessing techniques are applied. These include horizontal and vertical flipping, color jitter transformations, image normalization, and resizing images to a fixed input size compatible with deep learning models.
+To improve model generalization, several augmentation and preprocessing techniques are applied. These include horizontal and vertical flipping,  image normalization, and resizing images to a fixed input size compatible with deep learning models.
 
 #### Step 3: Classification Models
 Three categories of models are explored:
