@@ -32,15 +32,15 @@ Model performance is evaluated using standard classification metrics: Accuracy, 
 
 
 Tools and libraries:
-1. os: Handles file paths, directories, and operating system interactions.
+- os: Handles file paths, directories, and operating system interactions.
 
-2. numpy (np): Performs numerical computations and array operations.
+- numpy (np): Performs numerical computations and array operations.
 
-3. torch: Core PyTorch library for tensor operations and deep learning.
+- torch: Core PyTorch library for tensor operations and deep learning.
 
-4. torchvision.datasets: Loads and manages image datasets (e.g., folder-based datasets).
+- torchvision.datasets: Loads and manages image datasets (e.g., folder-based datasets).
 
-5. torchvision.transforms (T): Applies image preprocessing and data augmentation techniques.
+- torchvision.transforms (T): Applies image preprocessing and data augmentation techniques.
 
 - torchvision.models: Provides pretrained deep learning models for computer vision.
 
@@ -49,3 +49,4 @@ Tools and libraries:
 - torch.optim (optim): Implements optimization algorithms for training models.
 
 - torch.utils.data.DataLoader: Handles batching, shuffling, and efficient data loading.
+- monai
