@@ -5,7 +5,13 @@ Overview of the Proposed Workflow
 This figure illustrates the complete pipeline used in this study for eye disease classification using deep learning and hybrid transformer-based models. The workflow is organized into four main stages:
 
 #### Step 1: Data Collection
-The system is trained and evaluated using two publicly available retinal image datasets: the LAG Database and an Eye Diseases Classification dataset. These datasets contain fundus images representing multiple ocular conditions and normal cases.
+The models were trained and evaluated using two publicly available fundus images  datasets: the LAG Database and an Eye Diseases Classification dataset.
+
+1. The first one is the LAG-Database 
+https://github.com/smilell/AG-CNN/tree/master?tab=readme-ov-file 
+
+2 The second dataset is the Eye Diseases Classification dataset 
+https://www.kaggle.com/datasets/gunavenkatdoddi/eye-diseases-classification
 
 #### Step 2: Data Augmentation and Preprocessing
 To improve model generalization and handle data imbalance, several augmentation and preprocessing techniques are applied. These include horizontal and vertical flipping, color jitter transformations, image normalization, and resizing images to a fixed input size compatible with deep learning models.
