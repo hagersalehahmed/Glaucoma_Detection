@@ -1,62 +1,45 @@
 # Disease_prediction
 
+Overview of the Proposed Workflow
+
+This figure illustrates the complete pipeline used in this study for eye disease classification using deep learning and hybrid transformer-based models. The workflow is organized into four main stages:
+
+#### Step 1: Data Collection
+The system is trained and evaluated using two publicly available retinal image datasets: the LAG Database and an Eye Diseases Classification dataset. These datasets contain fundus images representing multiple ocular conditions and normal cases.
+
+#### Step 2: Data Augmentation and Preprocessing
+To improve model generalization and handle data imbalance, several augmentation and preprocessing techniques are applied. These include horizontal and vertical flipping, color jitter transformations, image normalization, and resizing images to a fixed input size compatible with deep learning models.
+
+#### Step 3: Classification Models
+Three categories of models are explored:
+
+- Base Models: Standard CNN architectures such as ResNet50, AlexNet, EfficientNetB0, VGG, InceptionV3, DenseNet121, and Swin Transformer.
+
+- Hybrid Models: CNN–Transformer hybrids that combine convolutional feature extractors with Swin Transformer blocks, including ResNet50-Swin, EfficientNetB0-Swin, InceptionV3-Swin, DenseNet121-Swin, AlexNet-Swin, and VGG-Swin.
+
+- Proposed Model: FusionNet-GD, which integrates multi-model feature representations to enhance discriminative power for eye disease classification.
+
+#### Step 4: Evaluation
+Model performance is evaluated using standard classification metrics: Accuracy, Precision, Recall, and F1-score, providing a comprehensive assessment of predictive effectiveness.
 
 
-### Dataset
- This study utilized UCI's machine learning repository to aggregate the benchmark Chronic Kidney Disease Dataset https://archive.ics.uci.edu/dataset/336/chronic+kidney+disease. The dataset includes 400 cases of CKD, 150 of which are negative and 250 of which are positive. The dataset is composed of 24 features that are categorized into 13 categorical features and 11 numeric features, with one class label having two values: 1 and 0. 
 
-### Dataset
- This study utilized UCI's machine learning repository to aggregate the benchmark Chronic Kidney Disease Dataset \cite{dataset}. The dataset includes 400 cases of CKD, 150 of which are negative and 250 of which are positive. The dataset is composed of 24 features that are categorized into 13 categorical features and 11 numeric features, with one class label having two values: 1 and 0. 
 
- ### Featur selection methods
- 1. Particle swarm optimization (PSO) 
- 2. Genetic algorithm (GA) 
+Tools and libraries:
+1. os: Handles file paths, directories, and operating system interactions.
 
- ### Baseline ML models
-1. Support vector machines (SVM) 
-2. Decision tree (DT) 
-3. Random Forest (RF) 
-4. Naive Bayes (NB)
-5. Logistic regression (LR)
- ### Stacking model
+2. numpy (np): Performs numerical computations and array operations.
 
-A stacking model, also known as stacked generalization or simply "stacking," is an ensemble machine learning technique that combines multiple models (often referred to as "base models" or "level-0 models") to improve the overall predictive performance. The key idea is to leverage the strengths of different models and reduce their weaknesses by stacking them together.
+3. torch: Core PyTorch library for tensor operations and deep learning.
 
-#### How Stacking Works
-1. Base Models (Level-0 Models):
+4. torchvision.datasets: Loads and manages image datasets (e.g., folder-based datasets).
 
-Multiple diverse models (e.g., decision trees, logistic regression, SVMs, etc.) are trained on the same dataset.
-Each base model makes predictions, which are then used as input features for the next stage, the meta-model.
-Meta-Model (Level-1 Model):
+5. torchvision.transforms (T): Applies image preprocessing and data augmentation techniques.
 
-2. The meta-model, also called the "blender" or "stacker," is trained on the predictions made by the base models.
+- torchvision.models: Provides pretrained deep learning models for computer vision.
 
-The purpose of the meta-model is to learn how to best combine the base models' predictions to improve the final output.
-#### Steps
+- torch.nn (nn): Contains neural network layers and loss functions.
 
-1. Step 1: Train Base Models
+- torch.optim (optim): Implements optimization algorithms for training models.
 
-Train several models on the training dataset, e.g., a Random Forest, a Support Vector Machine (SVM), and .
-2. Step 2: Generate Predictions
-
-For each base model, generate predictions for both the training data and the test data. These predictions become the new features.
-3. Step 3: Train the Meta-Model
-
-Using the predictions from the base models as input features, train a meta-model (e.g., a linear regression or another more complex model) to make the final predictions.
-4. Step 4: Make Final Predictions
-
-The meta-model takes the predictions from the base models and outputs the final prediction.
-#### Why Use Stacking?
-Improved Accuracy: By combining different models, stacking often achieves better performance than any single model.
-Diverse Models: It leverages the strengths of various models. For example, one model might handle outliers well, while another might capture the overall trend better.
-Flexibility: You can use different types of models as base models and a different type as the meta-model.
-
- ### Evaluation models
- Classification performance is  measured using precision, recall, f-measure, and accuracy metrics
-
- ### Explainable Artificial Intelligence  (XAI)
-XAI refers to a set of methods and techniques in artificial intelligence (AI) that aim to make the decision-making processes of AI systems transparent, understandable, and interpretable by humans.
-
-Tools:
-1. LIME (Local Interpretable Model-Agnostic Explanations): Explains individual predictions by approximating the black-box model with a local, interpretable model.
-2. SHAP (SHapley Additive exPlanations): Provides a unified measure of feature importance based on cooperative game theory.
+- torch.utils.data.DataLoader: Handles batching, shuffling, and efficient data loading.
