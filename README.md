@@ -1,4 +1,4 @@
-# Disease_prediction
+#     Glaucoma Detection
 
 Overview of the Proposed Workflow
 
@@ -10,7 +10,7 @@ The models were trained and evaluated using two publicly available fundus images
 1. The first one is the LAG-Database 
 https://github.com/smilell/AG-CNN/tree/master?tab=readme-ov-file 
 
-2 The second dataset is the Eye Diseases Classification dataset 
+2. The second dataset is the Eye Diseases Classification dataset 
 https://www.kaggle.com/datasets/gunavenkatdoddi/eye-diseases-classification
 
 #### Step 2: Data Augmentation and Preprocessing
